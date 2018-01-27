@@ -37,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
     public float deadZone = 0.6f;
     public float moveForce = 30;
     public float rotationSpeed = 5;
+    public float angleLimit = 45;
     Transform aimArrow;
     // Use this for initialization
     void Start()
@@ -48,10 +49,11 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        float forwardRot = (float)(90 - Math.Atan2(transform.forward.z, transform.forward.x) * 180 / 3.14);
         Vector3 lAX = new Vector3(Input.GetAxis(Enum.GetName(typeof(AxisName), leftHorizAxisName)), 0,
              -Input.GetAxis(Enum.GetName(typeof(AxisName), leftVerAxisName)));
         float rHAX = Input.GetAxis(Enum.GetName(typeof(AxisName), rightHorizAxisName));
-        //float rVAX = Input.GetAxis(Enum.GetName(typeof(AxisName), rightVerAxisName));
+        float rVAX = Input.GetAxis(Enum.GetName(typeof(AxisName), rightVerAxisName));
         if (lAX.magnitude < deadZone)
         {
             lAX = Vector3.zero;
@@ -60,6 +62,7 @@ public class PlayerMovement : MonoBehaviour
         {
             playerRB.AddForce(lAX * moveForce);
             playerRB.transform.forward = Vector3.Lerp(playerRB.velocity, lAX, Time.deltaTime);
+            //Debug.Log(90 - Math.Atan2(transform.forward.z, transform.forward.x) * 180 / 3.14);
         }
 
         if (Math.Abs(rHAX) < deadZone)
@@ -68,12 +71,25 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            float yRotation= 0 ;
-                aimArrow.transform.Rotate(0, rHAX * rotationSpeed, 0);
-            if (aimArrow.transform.rotation.y < 30 || aimArrow.transform.rotation.y > 330)
-                yRotation = -rHAX * rotationSpeed;
-            aimArrow.transform.Rotate(0, yRotation, 0);
-
+            aimArrow.transform.Rotate(0, rHAX * rotationSpeed, 0);
+            float forwardRotDiff = Math.Abs(forwardRot - aimArrow.transform.rotation.eulerAngles.y);
+            Debug.Log(forwardRotDiff);
+            if (forwardRotDiff > angleLimit && forwardRotDiff < 360 - angleLimit)
+                aimArrow.transform.Rotate(0, -rHAX * rotationSpeed, 0);
+            //Debug.Log(aimArrow.transform.rotation.eulerAngles.y);
+        }
+        if (Math.Abs(rVAX) < deadZone)
+        {
+            rVAX = 0;
+        }
+        else
+        {
+            aimArrow.transform.Rotate(0, rVAX * rotationSpeed, 0);
+            float forwardRotDiff = Math.Abs(forwardRot - aimArrow.transform.rotation.eulerAngles.y);
+            Debug.Log(forwardRotDiff);
+            if (forwardRotDiff > angleLimit && forwardRotDiff < 360 - angleLimit)
+                aimArrow.transform.Rotate(0, -rVAX * rotationSpeed, 0);
+            //Debug.Log(aimArrow.transform.rotation.eulerAngles.y);
         }
     }
 }
