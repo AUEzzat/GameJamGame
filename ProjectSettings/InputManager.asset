@@ -99,7 +99,7 @@ InputManager:
     snap: 1
     invert: 0
     type: 2
-    axis: 0
+    axis: 3
     joyNum: 3
   - serializedVersion: 3
     m_Name: RH2
@@ -115,7 +115,7 @@ InputManager:
     snap: 1
     invert: 0
     type: 2
-    axis: 2
+    axis: 4
     joyNum: 2
   - serializedVersion: 3
     m_Name: RH3
@@ -131,7 +131,7 @@ InputManager:
     snap: 1
     invert: 0
     type: 2
-    axis: 2
+    axis: 3
     joyNum: 3
   - serializedVersion: 3
     m_Name: RH4
@@ -147,7 +147,7 @@ InputManager:
     snap: 1
     invert: 0
     type: 2
-    axis: 2
+    axis: 3
     joyNum: 4
   - serializedVersion: 3
     m_Name: RH5
@@ -163,7 +163,7 @@ InputManager:
     snap: 1
     invert: 0
     type: 2
-    axis: 2
+    axis: 3
     joyNum: 5
   - serializedVersion: 3
     m_Name: LV1
@@ -259,7 +259,7 @@ InputManager:
     snap: 1
     invert: 0
     type: 2
-    axis: 3
+    axis: 2
     joyNum: 1
   - serializedVersion: 3
     m_Name: RV2
@@ -275,7 +275,7 @@ InputManager:
     snap: 1
     invert: 0
     type: 2
-    axis: 3
+    axis: 2
     joyNum: 2
   - serializedVersion: 3
     m_Name: RV3
@@ -291,7 +291,7 @@ InputManager:
     snap: 1
     invert: 0
     type: 2
-    axis: 3
+    axis: 2
     joyNum: 3
   - serializedVersion: 3
     m_Name: RV4
@@ -307,7 +307,7 @@ InputManager:
     snap: 1
     invert: 0
     type: 2
-    axis: 3
+    axis: 2
     joyNum: 4
   - serializedVersion: 3
     m_Name: RV5
@@ -323,7 +323,7 @@ InputManager:
     snap: 1
     invert: 0
     type: 2
-    axis: 3
+    axis: 2
     joyNum: 5
   - serializedVersion: 3
     m_Name: Fire1
