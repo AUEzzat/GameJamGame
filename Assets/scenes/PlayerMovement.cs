@@ -30,37 +30,44 @@ public class PlayerMovement : MonoBehaviour
 {
     public float speed = 5f;
     Rigidbody playerRB;
-    public AxisName horizontalAxisName;
-    public AxisName verticalAxisName;
+    public AxisName leftHorizAxisName;
+    public AxisName leftVerAxisName;
+    public AxisName rightHorizAxisName;
+    public AxisName rightVerAxisName;
     public float deadZone = 0.6f;
+    public float moveForce = 30;
+    Transform aimArrow;
     // Use this for initialization
     void Start()
     {
         playerRB = GetComponent<Rigidbody>();
+        aimArrow = transform.GetChild(0);
     }
 
     // Update is called once per frame
     void Update()
     {
-        float hAX =  Input.GetAxis(Enum.GetName(typeof(AxisName), horizontalAxisName));
-        float vAx =  Input.GetAxis(Enum.GetName(typeof(AxisName), verticalAxisName));
-        if (Math.Abs(hAX) < deadZone)
+        Vector3 lAX = new Vector3(Input.GetAxis(Enum.GetName(typeof(AxisName), leftHorizAxisName)), 0,
+             -Input.GetAxis(Enum.GetName(typeof(AxisName), leftVerAxisName)));
+        Vector3 rAX = new Vector3(Input.GetAxis(Enum.GetName(typeof(AxisName), rightHorizAxisName)), 0,
+             Input.GetAxis(Enum.GetName(typeof(AxisName), rightVerAxisName)));
+        if (lAX.magnitude< deadZone)
         {
-            hAX = 0;
+            lAX = Vector3.zero;
         }
         else
         {
-            playerRB.velocity = new Vector3(0, 0, hAX * speed);
-            print(hAX);
+            playerRB.AddForce(lAX * moveForce);
+            playerRB.transform.forward = Vector3.Lerp(playerRB.velocity, lAX, Time.deltaTime);
         }
-        if (Math.Abs(vAx) < deadZone) {
-            vAx = 0;
+
+        if (rAX.magnitude < deadZone)
+        {
+            rAX = Vector3.zero;
         }
-            
         else
         {
-            playerRB.velocity = new Vector3(vAx*speed, 0, 0);
-            print(vAx);
+            aimArrow.transform.Rotate((float)Math.Sin(Vector3.Dot(transform.forward, rAX)),0 , (float)Math.Cos(Vector3.Dot(transform.forward, rAX)));
         }
     }
 }
