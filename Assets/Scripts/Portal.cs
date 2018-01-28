@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Portal : MonoBehaviour {
+public class Portal : MonoBehaviour
+{
 
     public int otherIndex;
     public int index;
@@ -16,23 +17,30 @@ public class Portal : MonoBehaviour {
             Transform sonny = parent.GetChild(0);
             if (!other.transform.parent)
             {
-
                 other.transform.SetParent(null, false);
             }
             other.gameObject.transform.position = sonny.position;
             other.GetComponent<Rigidbody>().velocity = Vector3.Normalize(sonny.position - parent.position) * 6;
-            other.transform.GetChild(2).gameObject.SetActive(true);
+            if (other.transform.childCount == 3)
+                other.transform.GetChild(2).gameObject.SetActive(true);
         }
     }
 
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.transform.childCount == 3)
+            other.transform.GetChild(2).gameObject.SetActive(false);
+    }
+    void Start()
+    {
 
-    
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+
 }

@@ -52,16 +52,9 @@ public class CatchingControl : MonoBehaviour
     {
         if (bombHolded && Input.GetKeyDown(catchThrowBall))
         {
-            int randomThrow = Random.Range(0, 1);
-            switch (randomThrow)
-            {
-                case 0:
-                    transform.parent.GetChild(1).GetComponent<Animator>().SetTrigger("throw");
-                    break;
-                case 1:
+            
                     transform.parent.GetChild(1).GetComponent<Animator>().SetTrigger("throw2");
-                    break;
-            }
+             
             bombHolded = false;
             heldBomb.transform.SetParent(null, false);
             heldBomb.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
