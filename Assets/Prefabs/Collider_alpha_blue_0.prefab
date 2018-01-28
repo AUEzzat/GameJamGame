@@ -21,12 +21,13 @@ GameObject:
   - component: {fileID: 4049516471153460}
   - component: {fileID: 212288068897536006}
   - component: {fileID: 95016046116624166}
+  - component: {fileID: 65409061265200018}
   m_Layer: 0
   m_Name: Collider_alpha_blue_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4049516471153460
 Transform:
@@ -41,6 +42,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &65409061265200018
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1938285365672290}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.12, y: 0, z: 0.01}
+  m_Center: {x: 0, y: 0.86, z: 0}
 --- !u!95 &95016046116624166
 Animator:
   serializedVersion: 3
