@@ -16,6 +16,7 @@ public class Portal : MonoBehaviour {
             Transform sonny = parent.GetChild(0);
             if (!other.transform.parent)
             {
+
                 other.transform.SetParent(null, false);
             }
             other.gameObject.transform.position = sonny.position;
