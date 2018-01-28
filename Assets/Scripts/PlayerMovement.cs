@@ -73,10 +73,10 @@ public class PlayerMovement : MonoBehaviour
         {
             aimArrow.transform.Rotate(0, rHAX * rotationSpeed, 0);
             float forwardRotDiff = Math.Abs(forwardRot - aimArrow.transform.rotation.eulerAngles.y);
-            Debug.Log(forwardRotDiff);
+            //Debug.Log(forwardRotDiff);
             if (forwardRotDiff > angleLimit && forwardRotDiff < 360 - angleLimit)
                 aimArrow.transform.Rotate(0, -rHAX * rotationSpeed, 0);
-            //Debug.Log(aimArrow.transform.rotation.eulerAngles.y);
+            Debug.Log(aimArrow.transform.rotation.eulerAngles.y);
         }
         if (Math.Abs(rVAX) < deadZone)
         {
@@ -86,10 +86,10 @@ public class PlayerMovement : MonoBehaviour
         {
             aimArrow.transform.Rotate(0, rVAX * rotationSpeed, 0);
             float forwardRotDiff = Math.Abs(forwardRot - aimArrow.transform.rotation.eulerAngles.y);
-            Debug.Log(forwardRotDiff);
+            //Debug.Log(forwardRotDiff);
             if (forwardRotDiff > angleLimit && forwardRotDiff < 360 - angleLimit)
                 aimArrow.transform.Rotate(0, -rVAX * rotationSpeed, 0);
-            //Debug.Log(aimArrow.transform.rotation.eulerAngles.y);
+            Debug.Log(aimArrow.transform.rotation.eulerAngles.y);
         }
     }
 }
