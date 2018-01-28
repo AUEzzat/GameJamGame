@@ -18,32 +18,41 @@ public class GameManager : MonoBehaviour
     {
         bomb.GetComponent<Bomb>().bombTime = bombTimer;
     }
-
+    Transform currentPlayer;
     // Update is called once per frame
     void Update()
     {
+
         if (bomb.GetComponent<Bomb>().bombTime <= 0)
         {
-            print(currentRegion);
+            if (bomb.GetComponents<AudioSource>()[0].isPlaying)
+                bomb.GetComponents<AudioSource>()[0].Stop();
+            bomb.GetComponents<AudioSource>()[1].Play();
+            bomb.transform.GetChild(0).gameObject.SetActive(true);
             int currentRegionIndex = regions.IndexOf(currentRegion);
             if (currentRegionIndex < 0)
             {
                 return;
             }
-            Transform currentPlayer = players[currentRegionIndex].transform;
-            currentPlayer.GetChild(0).gameObject.SetActive(false);
-            currentPlayer.GetChild(1).gameObject.SetActive(false);
-            //currentPlayer.GetChild(2).gameObject.SetActive(true);
+            currentPlayer = players[currentRegionIndex].transform;
+            currentPlayer.GetChild(1).GetComponent<Animator>().SetTrigger("die");
             bomb.GetComponent<Bomb>().bombTime = bombTimer;
             StartCoroutine(RegenerateBomb());
+        }
+        else if (bomb.GetComponent<Bomb>().bombTime <= 1.5)
+        {
+            if (!bomb.GetComponents<AudioSource>()[0].isPlaying
+                && !bomb.GetComponents<AudioSource>()[1].isPlaying)
+                bomb.GetComponents<AudioSource>()[0].Play();
         }
     }
     IEnumerator RegenerateBomb()
     {
         bomb.GetComponent<MeshRenderer>().enabled = false;
-        //bomb.transform.GetChild(0).gameObject.SetActive(true);
         yield return new WaitForSeconds(2);
-        print(players.Capacity);
+        currentPlayer.GetChild(0).gameObject.SetActive(false);
+        currentPlayer.GetChild(1).gameObject.SetActive(false);
+        bomb.transform.GetChild(0).gameObject.SetActive(false);
         List<GameObject> activePlayers = new List<GameObject>();
         for (int i = 0; i < 4; i++)
         {
@@ -64,6 +73,5 @@ public class GameManager : MonoBehaviour
             bomb.transform.position = regions[players.IndexOf(activePlayers[randomPlayer])].transform.position;
         }
         bomb.GetComponent<MeshRenderer>().enabled = true;
-        //bomb.transform.GetChild(0).gameObject.SetActive(false);
     }
 }

@@ -57,11 +57,15 @@ public class PlayerMovement : MonoBehaviour
         if (lAX.magnitude < deadZone)
         {
             lAX = Vector3.zero;
+            if (transform.GetChild(1).GetComponent<Animator>().isActiveAndEnabled)
+                transform.GetChild(1).GetComponent<Animator>().SetBool("isRunning", false);
         }
         else
         {
             playerRB.AddForce(lAX * moveForce);
             playerRB.transform.forward = Vector3.Lerp(playerRB.velocity, lAX, Time.deltaTime);
+            if (transform.GetChild(1).GetComponent<Animator>().isActiveAndEnabled)
+                transform.GetChild(1).GetComponent<Animator>().SetBool("isRunning", true);
             //Debug.Log(90 - Math.Atan2(transform.forward.z, transform.forward.x) * 180 / 3.14);
         }
 

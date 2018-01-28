@@ -21,6 +21,7 @@ public class Portal : MonoBehaviour {
             }
             other.gameObject.transform.position = sonny.position;
             other.GetComponent<Rigidbody>().velocity = Vector3.Normalize(sonny.position - parent.position) * 6;
+            other.transform.GetChild(2).gameObject.SetActive(true);
         }
     }
 
