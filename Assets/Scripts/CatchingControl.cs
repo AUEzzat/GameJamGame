@@ -15,6 +15,7 @@ public class CatchingControl : MonoBehaviour
     {
         if (other.CompareTag("Bomb"))
         {
+            
             bombEntered = true;
             heldBomb = other;
         }
@@ -53,7 +54,9 @@ public class CatchingControl : MonoBehaviour
         {
             bombHolded = false;
             heldBomb.transform.SetParent(null, false);
+            heldBomb.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
             heldBomb.GetComponent<Rigidbody>().isKinematic = false;
+            heldBomb.transform.position = transform.GetChild(0).position;
             heldBomb.GetComponent<Rigidbody>().AddForce(Vector3.Normalize(transform.GetChild(0).position - transform.parent.position) * throwForce, ForceMode.Impulse);
             heldBomb.GetComponent<Rigidbody>().AddForce(transform.up * throwForce, ForceMode.Impulse);
         }

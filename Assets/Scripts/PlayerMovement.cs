@@ -76,7 +76,7 @@ public class PlayerMovement : MonoBehaviour
             //Debug.Log(forwardRotDiff);
             if (forwardRotDiff > angleLimit && forwardRotDiff < 360 - angleLimit)
                 aimArrow.transform.Rotate(0, -rHAX * rotationSpeed, 0);
-            Debug.Log(aimArrow.transform.rotation.eulerAngles.y);
+            //Debug.Log(aimArrow.transform.rotation.eulerAngles.y);
         }
         if (Math.Abs(rVAX) < deadZone)
         {
@@ -89,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
             //Debug.Log(forwardRotDiff);
             if (forwardRotDiff > angleLimit && forwardRotDiff < 360 - angleLimit)
                 aimArrow.transform.Rotate(0, -rVAX * rotationSpeed, 0);
-            Debug.Log(aimArrow.transform.rotation.eulerAngles.y);
+            //Debug.Log(aimArrow.transform.rotation.eulerAngles.y);
         }
     }
 }
