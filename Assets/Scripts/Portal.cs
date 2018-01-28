@@ -13,11 +13,13 @@ public class Portal : MonoBehaviour {
         if (other.CompareTag("Bomb"))
         {
             Transform parent = GetComponentInParent<portalManager>().Portals[otherIndex].transform;
-            Transform brudah = parent.GetChild(0);
+            Transform sonny = parent.GetChild(0);
             if (!other.transform.parent)
+            {
                 other.transform.SetParent(null, false);
-            other.gameObject.transform.position = brudah.position;
-            other.GetComponent<Rigidbody>().velocity = Vector3.Normalize(brudah.position - parent.position) * 6;
+            }
+            other.gameObject.transform.position = sonny.position;
+            other.GetComponent<Rigidbody>().velocity = Vector3.Normalize(sonny.position - parent.position) * 6;
         }
     }
 

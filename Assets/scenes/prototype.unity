@@ -127,6 +127,7 @@ GameObject:
   - component: {fileID: 2905502}
   - component: {fileID: 2905501}
   - component: {fileID: 2905504}
+  - component: {fileID: 2905505}
   m_Layer: 0
   m_Name: Plane (2)
   m_TagString: Untagged
@@ -216,6 +217,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   joystickNum: 4
   throwForce: 10
+--- !u!135 &2905505
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2905499}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 9.77
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5700020
 GameObject:
   m_ObjectHideFlags: 0
@@ -665,7 +678,7 @@ Transform:
   m_GameObject: {fileID: 76070179}
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0.7071068, w: 0}
   m_LocalPosition: {x: -2.2789989, y: 1.29, z: -5.71}
-  m_LocalScale: {x: 0.3200004, y: 0.25000024, z: 0.30000013}
+  m_LocalScale: {x: 0.3200004, y: 0.25000024, z: 0.4}
   m_Children:
   - {fileID: 2010298517}
   - {fileID: 1884518883}
@@ -680,7 +693,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 88862197}
-  - component: {fileID: 88862198}
   m_Layer: 0
   m_Name: GameObject (1)
   m_TagString: Untagged
@@ -701,18 +713,6 @@ Transform:
   m_Father: {fileID: 1620068793}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &88862198
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 88862196}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 9.77
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &99629406
 GameObject:
   m_ObjectHideFlags: 0
@@ -1629,7 +1629,7 @@ Transform:
   m_GameObject: {fileID: 212493115}
   m_LocalRotation: {x: -0.5, y: -0.5, z: -0.5, w: 0.5}
   m_LocalPosition: {x: -4.7999997, y: 1.2900001, z: 2.09}
-  m_LocalScale: {x: 0.3200002, y: 0.25000018, z: 0.30000016}
+  m_LocalScale: {x: 0.3200002, y: 0.25000018, z: 0.4}
   m_Children:
   - {fileID: 1533074737}
   - {fileID: 266864949}
@@ -1938,7 +1938,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 11, y: 1, z: 10.41}
-  m_Center: {x: 0, y: -0.47, z: -0.68}
+  m_Center: {x: 0, y: -0.52, z: -0.68}
 --- !u!65 &253258478
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1950,7 +1950,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 9.44, z: 11.1}
-  m_Center: {x: -3.75, y: 3.37, z: 0}
+  m_Center: {x: -4.73, y: 4.55, z: 0}
 --- !u!65 &253258479
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1961,8 +1961,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 11, y: 11, z: 1}
-  m_Center: {x: 0, y: 3.91, z: 4.78}
+  m_Size: {x: 12.42, y: 12.98, z: 1}
+  m_Center: {x: 0, y: 3.75, z: 4.78}
 --- !u!65 &253258480
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1973,8 +1973,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 9.44, z: 11.1}
-  m_Center: {x: 6.6, y: 3.37, z: 0}
+  m_Size: {x: 1, y: 9.44, z: 13.05}
+  m_Center: {x: 6.24, y: 3.87, z: 0}
 --- !u!65 &253258481
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1985,8 +1985,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 11, y: 11, z: 1}
-  m_Center: {x: 0, y: 3.91, z: -6.4}
+  m_Size: {x: 12, y: 12, z: 1}
+  m_Center: {x: 0, y: 3.91, z: -6.18}
 --- !u!1 &266255873
 GameObject:
   m_ObjectHideFlags: 0
@@ -2187,7 +2187,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 298320191}
-  - component: {fileID: 298320192}
   m_Layer: 0
   m_Name: GameObject (2)
   m_TagString: Untagged
@@ -2208,18 +2207,6 @@ Transform:
   m_Father: {fileID: 2905500}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &298320192
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 298320190}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 9.77
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &301696418
 GameObject:
   m_ObjectHideFlags: 0
@@ -4270,6 +4257,11 @@ Prefab:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 212288068897536006, guid: 47a6ea308a983704aa91c90003b66635,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 47a6ea308a983704aa91c90003b66635, type: 2}
   m_IsPrefabParent: 0
@@ -5294,7 +5286,7 @@ Transform:
   m_GameObject: {fileID: 942584796}
   m_LocalRotation: {x: 0.5, y: -0.5, z: -0.5, w: -0.5}
   m_LocalPosition: {x: 4.9199996, y: 1.2900001, z: -3.0019996}
-  m_LocalScale: {x: 0.3200002, y: 0.25000018, z: 0.30000016}
+  m_LocalScale: {x: 0.3200002, y: 0.25000018, z: 0.4}
   m_Children:
   - {fileID: 175744690}
   - {fileID: 635053667}
@@ -5875,6 +5867,7 @@ GameObject:
   - component: {fileID: 1097054811}
   - component: {fileID: 1097054810}
   - component: {fileID: 1097054813}
+  - component: {fileID: 1097054814}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -5963,7 +5956,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   joystickNum: 1
-  throwForce: 10
+  throwForce: 5
+--- !u!135 &1097054814
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1097054808}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 9.77
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1101017507
 GameObject:
   m_ObjectHideFlags: 0
@@ -6304,7 +6309,7 @@ Transform:
   m_GameObject: {fileID: 1122856824}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: -2.66, y: 1.2900001, z: 4.2700005}
-  m_LocalScale: {x: 0.32000002, y: 0.25000024, z: 0.3000002}
+  m_LocalScale: {x: 0.32000002, y: 0.25000024, z: 0.4}
   m_Children:
   - {fileID: 1526499653}
   - {fileID: 1033508196}
@@ -6517,7 +6522,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1166577089}
-  - component: {fileID: 1166577090}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -6538,18 +6542,6 @@ Transform:
   m_Father: {fileID: 1849332196}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &1166577090
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1166577088}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 9.77
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1174884081
 GameObject:
   m_ObjectHideFlags: 0
@@ -7073,15 +7065,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4740088256783742, guid: e97580ef71811a14c85b9cd3c8196d6a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.335
+      value: 1.98
       objectReference: {fileID: 0}
     - target: {fileID: 4740088256783742, guid: e97580ef71811a14c85b9cd3c8196d6a, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.37
+      value: 2.498
       objectReference: {fileID: 0}
     - target: {fileID: 4740088256783742, guid: e97580ef71811a14c85b9cd3c8196d6a, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -0.96
+      value: -2.22
       objectReference: {fileID: 0}
     - target: {fileID: 4740088256783742, guid: e97580ef71811a14c85b9cd3c8196d6a, type: 2}
       propertyPath: m_LocalRotation.x
@@ -8305,7 +8297,7 @@ Transform:
   m_GameObject: {fileID: 1603005540}
   m_LocalRotation: {x: 0.5, y: -0.5, z: -0.5, w: -0.5}
   m_LocalPosition: {x: 4.897, y: 1.2900003, z: 1.4820001}
-  m_LocalScale: {x: 0.32, y: 0.25000012, z: 0.3000001}
+  m_LocalScale: {x: 0.32, y: 0.25000012, z: 0.4}
   m_Children:
   - {fileID: 429806503}
   - {fileID: 414744567}
@@ -8421,6 +8413,7 @@ GameObject:
   - component: {fileID: 1620068795}
   - component: {fileID: 1620068794}
   - component: {fileID: 1620068797}
+  - component: {fileID: 1620068798}
   m_Layer: 0
   m_Name: Plane (1)
   m_TagString: Untagged
@@ -8510,6 +8503,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   joystickNum: 3
   throwForce: 10
+--- !u!135 &1620068798
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1620068792}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 9.77
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1629280980
 GameObject:
   m_ObjectHideFlags: 0
@@ -9154,7 +9159,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1733073046}
-  - component: {fileID: 1733073047}
   m_Layer: 0
   m_Name: GameObject (3)
   m_TagString: Untagged
@@ -9175,18 +9179,6 @@ Transform:
   m_Father: {fileID: 1097054809}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &1733073047
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1733073045}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 9.77
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1736866175
 GameObject:
   m_ObjectHideFlags: 0
@@ -9286,7 +9278,7 @@ Transform:
   m_GameObject: {fileID: 1736866175}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: -0.7071068}
   m_LocalPosition: {x: 2.2469995, y: 1.2900001, z: 4.262}
-  m_LocalScale: {x: 0.32, y: 0.25000012, z: 0.30000013}
+  m_LocalScale: {x: 0.32, y: 0.25000012, z: 0.4}
   m_Children:
   - {fileID: 1301249440}
   - {fileID: 993379730}
@@ -9617,7 +9609,7 @@ Transform:
   m_GameObject: {fileID: 1763731403}
   m_LocalRotation: {x: -0.5, y: -0.5, z: -0.5, w: 0.5}
   m_LocalPosition: {x: -4.81, y: 1.2900001, z: -2.7999985}
-  m_LocalScale: {x: 0.32000014, y: 0.25000024, z: 0.3000001}
+  m_LocalScale: {x: 0.32000014, y: 0.25000024, z: 0.4}
   m_Children:
   - {fileID: 11951779}
   - {fileID: 2126483599}
@@ -9791,6 +9783,7 @@ GameObject:
   - component: {fileID: 1849332198}
   - component: {fileID: 1849332197}
   - component: {fileID: 1849332200}
+  - component: {fileID: 1849332201}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -9880,6 +9873,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   joystickNum: 2
   throwForce: 10
+--- !u!135 &1849332201
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1849332195}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 9.77
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1852266641
 GameObject:
   m_ObjectHideFlags: 0
@@ -10676,7 +10681,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2020309477}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.73, y: 0.64, z: 0.04}
+  m_LocalPosition: {x: -0.73, y: 1.6, z: 0.04}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1736866180}
@@ -11504,7 +11509,7 @@ Transform:
   m_GameObject: {fileID: 2134531566}
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0.7071068, w: 0}
   m_LocalPosition: {x: 2.2499993, y: 1.2900001, z: -5.7019997}
-  m_LocalScale: {x: 0.3200003, y: 0.25000024, z: 0.3000002}
+  m_LocalScale: {x: 0.3200003, y: 0.25000024, z: 0.4}
   m_Children:
   - {fileID: 863898593}
   - {fileID: 1609750824}
